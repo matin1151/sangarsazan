@@ -32,3 +32,27 @@ body.hub-screen{overflow:hidden}body.hub-screen main{height:calc(100svh - 142px)
  #landscape>.comic-frame{height:auto;max-height:48svh}
  .grain{background:linear-gradient(180deg,#07151c25 0%,#08161d40 30%,#08161dc9 58%,#08161df5 100%)}
 }
+
+
+/* Mission desk: distinct, readable paper evidence on a worktable. */
+.mission-desk{position:relative;isolation:isolate;overflow:hidden;max-width:1120px;padding:clamp(22px,3vw,38px);background:linear-gradient(135deg,#172b2beF,#172423f5 62%,#273026f2);border-color:#c5a96b88;box-shadow:0 22px 70px #0008}
+.mission-desk:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.2;background:repeating-linear-gradient(12deg,transparent 0 17px,#a58a5b10 18px 19px)}
+.desk-kicker{display:flex;align-items:center;gap:9px;margin-bottom:6px}.desk-pin{width:9px;height:9px;border-radius:50%;background:#bd8f55;box-shadow:0 0 0 4px #bd8f5522}.desk-ref{margin-right:auto;color:#9fb0a4;font-size:10px;letter-spacing:.4px}
+.mission-desk h2{margin:4px 0 8px}.mission-desk .panel-copy{color:#c1cdc2;margin:5px 0 16px}
+.mission-desk .evidence-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin:20px 0 18px}
+.mission-desk .evidence{position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:9px;min-height:228px;padding:12px;text-align:right;color:#2c3831;background:linear-gradient(150deg,#e6ddc3,#cbc19f);border:1px solid #6c624b88;box-shadow:0 9px 18px #0004;transform:rotate(-.45deg)}
+.mission-desk .evidence:nth-child(2){transform:rotate(.55deg);background:linear-gradient(145deg,#e3e1c7,#c4c5a4)}
+.mission-desk .evidence:nth-child(3){transform:rotate(-.2deg);background:linear-gradient(145deg,#e1dcc5,#c6c1a4)}
+.mission-desk .evidence:hover{color:#21352d;background:#f0e8d1;transform:translateY(-4px) rotate(0);box-shadow:0 14px 24px #0006}
+.evidence-visual{position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;width:100%;height:132px;padding:12px;border:1px solid #7d806b88;color:#364138;background-color:#e8e2cf;background-image:repeating-linear-gradient(0deg,transparent 0 20px,#63766518 21px 22px)}
+.visual-heading{font-size:11px;font-weight:700;position:relative;z-index:1}.visual-detail{max-width:83%;font-size:9px;line-height:1.8;position:relative;z-index:1}.visual-mark{position:absolute;left:14px;bottom:10px;font-size:38px;line-height:1;color:#637c74;opacity:.9}
+.evidence-visual-report{background-image:linear-gradient(155deg,transparent 57%,#5b89904c 58%,#5b89904c 60%,transparent 61%),linear-gradient(170deg,transparent 68%,#5b89904c 69%,#5b89904c 71%,transparent 72%),repeating-linear-gradient(0deg,transparent 0 20px,#63766518 21px 22px)}
+.evidence-visual-label{background-image:repeating-linear-gradient(0deg,transparent 0 22px,#63766518 23px 24px),linear-gradient(90deg,#d7e0d333 0 50%,#e7d8a044 50%)}
+.evidence-visual-label:after{content:"آبی  ✓     زرد  ◇";position:absolute;bottom:12px;right:12px;padding:5px 8px;border:1px dashed #766d50;background:#f2edda;color:#435347;font-size:9px;letter-spacing:.5px;transform:rotate(-2deg)}
+.evidence-visual-map{background-image:linear-gradient(0deg,transparent 95%,#86917b25 96%),linear-gradient(90deg,transparent 95%,#86917b25 96%);background-size:22px 22px}
+.evidence-visual-map:after{content:"";position:absolute;left:17%;bottom:27px;width:49%;border-top:2px dashed #728578;transform:rotate(-8deg)}
+.evidence-visual-map .visual-mark{color:#9a754c;z-index:1}
+.evidence-title{font-size:13px;font-weight:700;line-height:1.5}.mission-desk .read-label{align-self:flex-start;padding:3px 8px;border-radius:12px;background:#45594b18;color:#42604c;font-size:9px}.mission-desk .evidence:focus-visible{outline-color:#e4c680;outline-offset:4px}
+@media(max-width:900px){.mission-desk .evidence-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.mission-desk .evidence-map{grid-column:1/-1}.mission-desk .evidence-map .evidence-visual{height:105px}}
+@media(max-width:720px){.mission-desk{padding:18px 15px;margin:12px auto}.mission-desk .evidence-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.mission-desk .evidence{min-height:194px;padding:9px}.evidence-visual{height:100px;padding:9px}.visual-heading{font-size:10px}.visual-detail{font-size:8px}.visual-mark{font-size:30px;left:9px;bottom:7px}.evidence-title{font-size:11px}.mission-desk .read-label{font-size:8px}.mission-desk .panel-actions{gap:8px}.mission-desk .hint{font-size:10px}}
+@media(max-width:390px){.mission-desk .evidence-grid{grid-template-columns:1fr}.mission-desk .evidence-map{grid-column:auto}.mission-desk .evidence{min-height:180px}.evidence-visual{height:92px}}
