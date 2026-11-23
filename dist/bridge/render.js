@@ -3,7 +3,7 @@
 const M=BridgeMap;
 class Renderer{
  constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.w=1000;this.h=560}
- resize(){const r=this.canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);this.canvas.width=r.width*d;this.canvas.height=r.height*d;this.scale=Math.min(r.width/1000,r.height/560);this.ox=(r.width-1000*this.scale)/2;this.oy=(r.height-560*this.scale)/2;this.ctx.setTransform(d,0,0,d,0,0)}
+ resize(){const r=this.canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);this.canvas.width=r.width*d;this.canvas.height=r.height*d;this.scale=Math.min(r.width/1000,r.height/560)*(this.zoom||1);this.ox=(r.width-1000*this.scale)/2+(this.pan||0)*this.scale;this.oy=(r.height-560*this.scale)/2;this.ctx.setTransform(d,0,0,d,0,0)}
  project(x,y,z=0){return {x:80+x*.97-y*.20,y:60+y*.88+x*.06-z}}
  unproject(x,y){const a=x-80,b=y-60;return {x:(a*.88+b*.20)/.8656,y:(b*.97-a*.06)/.8656}}
  point(clientX,clientY){const r=this.canvas.getBoundingClientRect();return this.unproject((clientX-r.left-this.ox)/this.scale,(clientY-r.top-this.oy)/this.scale)}
