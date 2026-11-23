@@ -46,3 +46,9 @@ https://commons.wikimedia.org/wiki/File:Operation_Kheibar_map.svg
 فونت رابط: Yekan از مخزن DediData/Yekan-Font، با مجوز SIL Open Font License 1.1. فایل فونت از نشانی مخزن بارگیری می‌شود؛ فونت محلی نصب‌شده با نام Yekan یا B Yekan نیز پشتیبانی می‌شود.
 https://github.com/DediData/Yekan-Font
 https://github.com/DediData/Yekan-Font/blob/master/license.txt
+
+
+عکس‌های آرشیوی استفاده‌شده در کارت‌های میز مأموریت: تصویر نیروهای پشتیبانی در کنار هورالهویزه، گرفته‌شده در ۲۲ فوریه ۱۹۸۴، اثر محمدحسین حیدری، منتشرشده در Fars News و بازنشرشده در Wikimedia Commons با CC BY 4.0؛ و تصویر IRNA از آغاز عملیات خیبر در ۱۹۸۴، در Wikimedia Commons با وضعیت مالکیت عمومی مطابق قواعد ایران. عکس‌ها در رابط بازی به عنوان عکس‌های دوره معرفی شده‌اند و در صورت قطع اینترنت ممکن است بارگیری نشوند.
+
+https://commons.wikimedia.org/wiki/File:Operation_Kheibar_by_Mohammad_Hossein_Heidari.jpg
+https://commons.wikimedia.org/wiki/File:Operation_Kheibar_by_IRNA_%28028%29.jpg
