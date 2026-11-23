@@ -1,0 +1,33 @@
+name: Test Hoor and bridge interactions
+on: [push, workflow_dispatch]
+permissions:
+  contents: write
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run check && npm test && npm run build
+      - run: npm install --no-save --package-lock=false playwright@1.62.1
+      - run: npx playwright install --with-deps chromium
+      - name: Browser scenarios
+        run: |
+          node scripts/serve.js > /tmp/sangarsazan-server.log 2>&1 &
+          node tests/browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chapters-browser-evidence
+          path: test-results/
+      - name: Commit standalone release on feature branch
+        if: success() && github.ref == 'refs/heads/feature/khaybar-chapter-03'
+        run: |
+          git config user.name "Sangarsazan build"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add release/sangarsazan.html
+          git diff --cached --quiet || git commit -m "Build standalone Hoor and bridge release"
+          git push
